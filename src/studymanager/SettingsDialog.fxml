@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studymanager.SettingsDialogController">
+  <tabs>
+    <Tab text="Schedule">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="137.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="527.0" minWidth="10.0" prefWidth="179.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="506.0" minWidth="10.0" prefWidth="89.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="506.0" minWidth="10.0" prefWidth="237.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="146.0" minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="361.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="387.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="387.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="387.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="387.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="25.0" prefWidth="208.0" text="Please fill all the required information:" GridPane.columnSpan="2147483647">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="23.0" prefWidth="85.0" text="Semester Start:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="dpSemStart" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="OHT 1 Start:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="dpOht1Start" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="OHT 1 End:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="dpOht1End" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="OHT 2 Start:" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="OHT 2 End:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="ESE Start:" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="ESE End:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="dpOht2Start" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="dpOht2End" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="dpEseStart" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="dpEseEnd" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="25.0" prefWidth="81.0" text="Save" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="100.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </content></Tab>
+    <Tab text="Classes">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="288.0" text="Please specify the path to the semester study material:" VBox.vgrow="ALWAYS" />
+                  <HBox prefHeight="100.0" prefWidth="640.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="fieldClasses" prefWidth="385.0" />
+                        <Button mnemonicParsing="false" onAction="#classesBrowseButtonPressed" prefHeight="25.0" prefWidth="76.0" text="Browse...">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="25.0" prefWidth="81.0" text="Save">
+                           <HBox.margin>
+                              <Insets bottom="35.0" right="58.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="50.0" top="15.0" />
+               </padding>
+            </VBox>
+         </content></Tab>
+    <Tab text="Reminders">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <DatePicker fx:id="remindersDp" />
+                  <TextField fx:id="remindersField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="282.0" />
+                  <Button mnemonicParsing="false" onAction="#remindersAddButtonPressed" prefHeight="25.0" prefWidth="50.0" text="Add" />
+                  <Button mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="25.0" prefWidth="81.0" text="Save">
+                     <VBox.margin>
+                        <Insets left="450.0" top="250.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </content></Tab> 
+  </tabs>
+</TabPane>

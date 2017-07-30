@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studymanager.ClassProgressDialogController">
+  <tabs>
+    <Tab text="Progress">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+               <children>
+                  <Label fx:id="progressText" text="Your overall score so far for  is">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="progressPercent" alignment="CENTER" prefHeight="80.0" prefWidth="108.0" text="   %">
+                     <VBox.margin>
+                        <Insets left="250.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </content></Tab>
+    <Tab text="Grades">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="211.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="109.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="490.0" minWidth="10.0" prefWidth="196.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="490.0" minWidth="10.0" prefWidth="128.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="325.0" minHeight="10.0" prefHeight="167.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Quizzes:">
+                     <GridPane.margin>
+                        <Insets left="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ListView fx:id="gradesListQuizzes" maxWidth="-Infinity" prefHeight="147.0" prefWidth="176.0" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </ListView>
+                  <Label text="Assignments:" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="70.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ListView fx:id="gradesListAssigns" maxWidth="-Infinity" prefHeight="147.0" prefWidth="176.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </ListView>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <TextField fx:id="gradesFieldQuiz" maxWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="0.0" />
+                        <Button mnemonicParsing="false" onAction="#gradesQuizAddButtonPressed" prefHeight="25.0" prefWidth="59.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#gradesQuizRemoveButtonPressed" text="Remove" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="229.0" spacing="10.0">
+                           <children>
+                              <Label text="Out of" />
+                              <TextField fx:id="gradesFieldQuizMax" prefHeight="25.0" prefWidth="45.0" text="10" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <children>
+                        <TextField fx:id="gradesFieldAssign" maxWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="0.0" />
+                        <Button mnemonicParsing="false" onAction="#gradesAssignAddButtonPressed" prefHeight="25.0" prefWidth="59.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#gradesAssignRemoveButtonPressed" text="Remove" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="229.0" spacing="10.0">
+                           <children>
+                              <Label text="Out of" />
+                              <TextField fx:id="gradesFieldAssignMax" prefHeight="25.0" prefWidth="45.0" text="10" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="OHT 1:" />
+                        <TextField fx:id="gradesFieldOht1" prefHeight="25.0" prefWidth="45.0" text="0.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="229.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Out of" />
+                        <TextField fx:id="gradesFieldOht1Max" prefHeight="25.0" prefWidth="45.0" text="30" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="OHT 2:" />
+                        <TextField fx:id="gradesFieldOht2" prefHeight="25.0" prefWidth="45.0" text="0.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="229.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Out of" />
+                        <TextField fx:id="gradesFieldOht2Max" prefHeight="25.0" prefWidth="45.0" text="30" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="ESE:" />
+                        <TextField fx:id="gradesFieldEse" prefHeight="25.0" prefWidth="45.0" text="0.0" />
+                     </children>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="41.0" prefWidth="229.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="Out of" />
+                        <TextField fx:id="gradesFieldEseMax" prefHeight="25.0" prefWidth="45.0" text="100" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="4.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="Project:" />
+                        <TextField fx:id="gradesFieldProj" prefHeight="25.0" prefWidth="45.0" text="0.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="41.0" prefWidth="229.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="Out of" />
+                        <TextField fx:id="gradesFieldProjMax" prefHeight="25.0" prefWidth="45.0" text="50" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="25.0" prefWidth="70.0" text="Save" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets top="-20.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </content></Tab>
+      <Tab text="Weightage">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="131.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="0.0" prefWidth="42.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="529.0" minWidth="10.0" prefWidth="77.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="533.0" minWidth="10.0" prefWidth="83.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="44.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="263.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="146.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="146.0" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="301.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Please fill the fields according to the course outline provided by the instructor." GridPane.columnSpan="2147483647">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quizzes:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="75.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="weightageFieldQuizzes" prefWidth="81.0" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Assignments:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="weightageFieldAssigns" text="0.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label text="\%" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Class Credits:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="weightageFieldClassCredit" text="3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="OHTs:" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="85.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="weightageFieldOhts" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="ESE:" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="47.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="weightageFieldEse" text="0.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Label text="\%" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Project:" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="29.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="weightageFieldProj" text="0.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Label text="\%" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="25.0" prefWidth="70.0" text="Save" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="135.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
